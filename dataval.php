@@ -1,5 +1,6 @@
 <?php
 
+
 function test_input($data) {
   $data = trim($data);
   $data = stripslashes($data);
@@ -7,8 +8,7 @@ function test_input($data) {
   return $data;
 }
 
-
-function isin($vett, $el) {
+function is_in($el, $vett) {
 	sort($vett);
     $l = count($vett);
     while ($l > 1) {
@@ -21,11 +21,28 @@ function isin($vett, $el) {
       }
       $l = count($vett);
     }
-    if ($el==$vett[0]) {
-      return 1;
-    } else {
-      return 0;
-    }
+    return ($el==$vett[0]);
 }
+
+function is_in_range($el, $min=null, $max=null){
+	if ($max==null && $min>$el){
+		return "0";
+	} else if ($min==null && $max<$el){
+		return "1";
+	} else {
+		if ($min>$el || $el>$max){
+			return "2";
+		} else {
+        	return "3";
+        }
+	}
+}
+
+function match_patt($str, $patt, $inv=false){
+	$m = preg_match($patt, $str);
+    $m = ($inv) ? !$m : $m;
+	return $m;
+}
+
 
 ?>
