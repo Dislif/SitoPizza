@@ -4,19 +4,44 @@
 
 <p>Il tuo ordine:
 <?php
-require "phpinclude.php";
+require "datival.php";
 
 
-$nominativo = $indirizzo = $numeropizze = $pizze = $formato="";
+$depdata = $_GET;
 
 if ($_SERVER["REQUEST_METHOD"] == "GET") {
-  $nominativo = test_input($_GET["nominativo"]);
-  $indirizzo = test_input($_GET["indirizzo"]);
-  $numeropizze = test_input($_GET["numeropizze"]);
-  $pizze = test_input($_GET["pizze"]);
-  $formato = test_input($_GET["formato"]);
+	foreach ($_GET as $key => $val){
+		if(isset($_GET[$key])){
+			if($key=="telefono" || $key=="numeropizze"){
+				if(match_patt($val, "/[^0-9]+/u")){
+					$depdata[$key] = new Error("Valore " . $key . " deve contenere solo cifre numeriche.");
+				}
+			} else if($key=="numeropizze"){
+				if (is_in_range($val, "1")!="3"){
+					$depdata[$key] = new Error("Valore " . $key . " deve essere maggiore di 0.");
+				}
+			} else if($key=="nominativo") {
+				if(match_patt($val, "/[^a-zA-Z ']+/u")){
+					$depdata[$key] = new Error("Valore " . $key . " deve solo contenere caratteri alfabetici, spazi e apostrofi");
+				}
+			} else {
+				$depdata[$key] = test_input($val);
+			}
+		} else {
+			$depdata[$key] = new Error("Valore " . $key . " non definito.");
+		}
+	}
 }
- echo $nominativo. " presso " .$indirizzo . " ha ordinato " . $numeropizze. " " . $pizze. " formato " . $formato 
+
+$str = "";
+
+foreach ($depdata as $key => $val){
+	$str = $key. ": " . $val . "<br>";
+}
+
+echo $str;  
+
+
 ?>
 
 </p>

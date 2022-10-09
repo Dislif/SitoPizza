@@ -2,7 +2,6 @@
 <html>
     <head>
         <title>ProntoAlibaba</title>
-		
 		<style>
 			form {
 				margin: 50px;
@@ -81,14 +80,14 @@
 			<legend> Personalizza la tua pizza </legend>
 			
 				<label for="pizze">Pizza:</label>
-				<select name="pizze" id="pizze" size="2" multiple>
+				<select name="pizze" id="pizze">
 					<option value="margherita">Margherita</option>
 					<option value="diavola">Diavola</option>
 					<option value="quattrostagioni">Quattro stagioni</option>
 					<option value="salsfung">Salsiccia e funghi</option>
 					<option value="ciptonno">Cipolla e tonno</option>
 					<option value="wurstel">Wurstel</option>
-					<option value="crudorucola">Crudo e rucola</option>
+					<option value="crudoruc">Crudo e rucola</option>
 					<option value="marinara">Marinara</option>
 					<option value="olive">Olive</option>
 				</select><br><br>
@@ -105,10 +104,10 @@
 				<label for="granform">Grande</label>
 				<br><br>	
 				
-				<label for="indirizo">Celiaco:</label>
-				<input type="radio" id="yes" name="isceliaco">
+				<label for="isceli">Celiaco:</label>
+				<input type="radio" id="yes" name="isceli" value="1">
 				<label for="yes">Sì</label>
-				<input type="radio" id="no" name="isceliaco">
+				<input type="radio" id="no" name="isceli" value="0">
 				<label for="no">No</label><br><br>
 				
 				<input type="submit" value="ordina">
@@ -116,79 +115,13 @@
 		</form> 
 		
 		<table>
-			
-			<tr>
+			<th>
 				<td></td>
-				<td>Margherita</td>
-				<td>Mozzarella, pomodoro, basilico</td>
-				<td>10€</td>
-			</tr>
-			
-			<tr>
 				<td></td>
-				<td>Diavola</td>
-				<td>Mozzarella, pomodoro, salame piccante</td>
-				<td>15€</td>
-			</tr>
-			
-			<tr>
-				<td></td>
-				<td>Quattro stagioni</td>
-				<td>Mozzarella, pomodoro, funghi, prosciutto, olive, carciofi</td>
-				<td>11€</td>
-			</tr>
-			
-			<tr>
-				<td></td>
-				<td>Salsiccia e funghi</td>
-				<td>Mozzarella, pomodoro, funghi, salsiccia</td>
-				<td>16€</td>
-			</tr>
-			
-			<tr>
-				<td></td>
-				<td>Cipolla e tonno</td>
-				<td>Mozzarella, pomodoro, cipolla, tonno</td>
-				<td>13€</td>
-			</tr> 
-			
-			<tr>
-				<td></td>
-				<td>Ortolana</td>
-				<td>Pomodoro, melanzana, peperoni, zucchine, cipolle</td>
-				<td>13€</td>
-			</tr>
-			
-			<tr>
-				<td></td>
-				<td>Wurstel</td>
-				<td>Mozzarella, pomodoro, wurstel</td>
-				<td>13€</td>
-			</tr>
-			
-			
-			<tr>
-				<td></td>
-				<td>Crudo e rucola</td>
-				<td>Mozzarella, pomodoro, crudo, rucola</td>
-				<td>13€</td>
-			</tr>
-			
-			
-			<tr>
-				<td></td>
-				<td>Marinara</td>
-				<td>Pomodoro, origano</td>
-				<td>13€</td>
-			</tr>
-			
-			
-			<tr>
-				<td></td>
-				<td>Olive</td>
-				<td>Mozzarella, pomodoro, olive</td>
-				<td>13€</td>
-			</tr>
+				<td>Normale</td>
+				<td>Piccola</td>
+				<td>Grande</td>
+			</th>
 			
 		</table>
 		<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
