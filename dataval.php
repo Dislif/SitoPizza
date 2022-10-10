@@ -24,24 +24,40 @@ function is_in($el, $vett) {
     return ($el==$vett[0]);
 }
 
-function is_in_range($el, $min=null, $max=null){
-	if ($max==null && $min>$el){
-		return "0";
-	} else if ($min==null && $max<$el){
-		return "1";
-	} else {
-		if ($min>$el || $el>$max){
-			return "2";
+function depure($get){
+	$depdata = $get;
+	foreach ($get as $key => $val){
+		if(!empty($get[$key])){
+			if($key=="telefono" ){
+				if(!preg_match("/^[0-9]{10}$/u", $val)){
+					$depdata[$key] = "Valore " . $key . " deve contenere solo 10 cifre numeriche.";
+				}
+			} else if($key=="numeropizze"){
+				if(!preg_match("/^[0-9]+$/u", $val)){
+					$depdata[$key] = "Valore " . $key . " deve contenere solo cifre numeriche.";
+				} else if ("1">$val){
+					$depdata[$key] = "Valore " . $key . " deve essere maggiore di 0.";
+				}
+			} else if($key=="nominativo") {
+				if(!preg_match("/^[A-Z][a-z]+( [A-Z][a-z]*'?)*$/u", $val)){
+					$depdata[$key] = "Valore " . $key . " deve solo contenere caratteri alfabetici, spazi e apostrofi";
+				}
+			} else if($key=="email") {
+				if(!preg_match("/^[a-zA-Z0-9\._]+@[a-zA-Z]+\.[a-zA-Z]+$/u", $val)){
+					$depdata[$key] = "Valore " . $key . " scritto in modo scorretto";
+				}
+			} else if($key=="indirizzo") {
+				if(!preg_match("/^[A-Z][a-z]+ [A-Z][a-z]+( [A-Z][a-z]*'?)* [0-9]+$/u", $val)){
+					$depdata[$key] = "Valore " . $key . " scritto in modo scorretto";
+				}
+			} else {
+				$depdata[$key] = test_input($val);
+			}
 		} else {
-        	return "3";
-        }
+			$depdata[$key] = "Valore " . $key . " non definito.";
+		}
 	}
-}
-
-function match_patt($str, $patt, $inv=false){
-	$m = preg_match($patt, $str);
-    $m = ($inv) ? !$m : $m;
-	return $m;
+	return $depdata;
 }
 
 
