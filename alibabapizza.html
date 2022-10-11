@@ -1,0 +1,174 @@
+<!DOCTYPE html>
+<html>
+    <head>
+        <title>ProntoAlibaba</title>
+		<style>
+			form {
+				margin: 50px;
+				padding: 15px;
+				background-color: #800000;
+				filter: opacity(100%);
+				color: white;
+				/*font-family: Bahnschrift;*/
+				border-radius: 7px;
+				width: 25%;
+				position: absolute;
+				top: 60px;
+			}
+			
+			table {
+				font-family: arial, sans-serif;
+				border-collapse: collapse;
+				position: absolute;
+				right: 50px;
+			
+			}
+
+			td, th {
+				border: 1px solid #dddddd;
+				text-align: left;
+				padding: 8px;
+			}
+
+			tr:nth-child(even) {
+				background-color: rgba(221, 221, 221, 0.5);
+			}
+			
+			tr:nth-child(odd) {
+				background-color: rgba(255, 99, 71, 0.5);
+			}
+			
+			body {
+				background-image: url("restaurant.jpg");
+				background-size: cover;
+				background-position: center;
+				background-attachment: fixed;
+			}
+			
+			h1 {
+				padding: 15px;
+				background-color: #800000;
+				filter: opacity(100%);
+				color: white;
+				font-family: Bahnschrift
+				border-radius: 7px;
+			}
+		
+		</style>
+    </head>
+    <body>
+        <h1>Pizzeria Alibaba</h1>
+		
+		<form method="get" action="phpizza.php">
+			<fieldset>
+			<legend> Dati anagrafici </legend>
+		
+				<label for="nominativo">Nominativo:</label>
+				<input type="text" id="nominativo" name="nominativo" placeholder="obbligatorio"><br><br>
+				
+				<label for="indirizo">Indirizzo:</label>
+				<input type="text" id="indirizzo" name="indirizzo" placeholder="obbligatorio"><br><br>
+				
+				<label for="indirizzo">Telefono:</label>
+				<input type="tel" id="telefono" name="telefono" placeholder="obbligatorio"><br><br>
+				
+				<label for="email">Email:</label>
+				<input type="text" id="email" name="email" placeholder="facoltativo"><br><br>
+			</fieldset>
+			
+			<fieldset>
+			<legend> Personalizza la tua pizza </legend>
+			
+				<label for="pizze">Pizza:</label>
+				<select name="pizze" id="pizze">
+					<option value="margherita">Margherita</option>
+					<option value="diavola">Diavola</option>
+					<option value="quattrostagioni">Quattro stagioni</option>
+					<option value="salsfung">Salsiccia e funghi</option>
+					<option value="ciptonno">Cipolla e tonno</option>
+					<option value="wurstel">Wurstel</option>
+					<option value="crudoruc">Crudo e rucola</option>
+					<option value="marinara">Marinara</option>
+					<option value="olive">Olive</option>
+				</select><br><br>
+				
+				<label for="numeropizze">Numero:</label>
+				<input type="number" id="numeropizze" name="numeropizze" placeholder="obbligatorio" min="1"><br><br>
+					
+				<label> Formato: </label>
+				<input type="radio" id="normform" name="formato" value="normale">
+				<label for="normform">Normale</label>
+				<input type="radio" id="granform" name="formato" value="grande">
+				<label for="granform">Grande</label>
+				<br><br>
+				
+				<input type="submit" value="ordina">
+			</fieldset>
+		</form> 
+		
+		<table>
+		<table style="width:60%">
+			<tr>
+				<th>PIZZA</th>
+				<th>INGREDIENTI</th>
+				<th>PREZZO PIZZA NORMALE</th>
+				<th>PREZZO PIZZA GRANDE </th>
+			  </tr>
+			  <tr>
+				<td>Margherita</td>
+				<td>Pomodoro,Mozzarella,Basilico</td>
+				<td>5$</td>
+				<td>6.50$</td>
+			  </tr>
+			  <tr>
+				<td>Diavola</td>
+				<td>Pomodoro,Mozzarella,Salame Piccante</td>
+				<td>6$</td>
+				<td>7.50$</td>
+			  </tr>
+				<tr>
+				<td>Quattro Stagioni</td>
+				<td>Pomodoro,Mozzarella,Funghi,Carciofini,Prosciutto cotto,Olive nere</td>
+				<td>7.50$</td>
+				<td>9$</td>
+			  </tr>	
+			    <tr>
+				<td>Salsiccia e funghi</td>
+				<td>Pomodoro,Mozzarella,Salsiccia,Funghi</td>
+				<td>6.50$</td>
+				<td>8$</td>
+			  </tr>
+			    <tr>
+				<td>Cipolla e tonno</td>
+				<td>Pomodoro,Mozzarella,Tonno,Cipolla</td>
+				<td>6$</td>
+				<td>7.50$</td>
+			  </tr>
+			    <tr>
+				<td>Wurstel</td>
+				<td>Pomodoro,Mozzarella,Wurstel</td>
+				<td>6$</td>
+				<td>7.50$</td>
+			  </tr>
+			    <tr>
+				<td>Crudo e rucola</td>
+				<td>Pomodoro,Mozzarella,Prosciutto crudo,Rucola</td>
+				<td>7$</td>
+				<td>8.50$</td>
+				  <tr>
+				<td>Marinara</td>
+				<td>Pomodoro,Mozzarella,Origano,Pepe nero</td>
+				<td>5$</td>
+				<td>6.50$</td>
+			  </tr>
+			    <tr>
+				<td>Olive</td>
+				<td>Pomodoro,Mozzarella,Olive, Prosciutto cotto</td>
+				<td>7$</td>
+				<td>8.50$</td>
+			  </tr>
+			
+		</table>
+		<p><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br><br></p>
+    </body>
+</html>
